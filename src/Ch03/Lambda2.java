@@ -35,9 +35,25 @@ public class Lambda2 {
 //                    }
 //                });
 
-        List<Integer> l = map(Arrays.asList("lambdas", "in", "action"),
-                (String s) -> s.length());
-        l.forEach(System.out::println);
+//        List<Integer> l = map(Arrays.asList("lambdas", "in", "action"),
+//                (String s) -> s.length());
+//        l.forEach(System.out::println);
+
+//        List<Integer> list = new ArrayList<>();
+//        for (int i = 300; i < 400; i++) {
+//            list.add(i);
+//        }
+//
+//        IntPredicate evenNumbers = (int i) -> i % 2 == 0;
+//        evenNumbers.test(1000);
+//
+//        Predicate<Integer> oddNumbers = (Integer i) -> i % 2 != 0;
+//        oddNumbers.test(1000);
+
+        List<String> word = List.of("Hello", "World!", "JAVA", "Programming");
+        word.sort(String::compareToIgnoreCase);
+
+
     }
 
     //  pg 100
@@ -112,5 +128,15 @@ public class Lambda2 {
             result.add(f.apply(t));
         }
         return result;
+    }
+
+    //  pg 104
+    public interface IntPredicate{
+        boolean test(int t);
+    }
+
+    //  pg 116
+    private static boolean isValidName(String string) {
+        return Character.isUpperCase(string.charAt(0));
     }
 }
